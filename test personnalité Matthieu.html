@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="fr"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Quel Matthieu es-tu ?&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.question {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 80%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 2px 2px 10px rgba(0,0,0,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 80%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#result {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Quel Matthieu es-tu ?&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="quiz"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="result" style="display:none;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Le matin, tu préfères petit-déjeuner...",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Du pão de queijo", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Un avocadrag toast", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Déjeuner ? Je ne connais pas.", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Ton vêtement fétiche, c’est quoi ?",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Des tongs Havaiana", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Une robe et des talons de 15 cm", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Tous les vêtements se racontent", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Ton mot préféré en soirée ?",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Saúde !", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Yasss queen", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Je note vos looks sur 10", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Ta chanson ultime pour un karaoké ?",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "‘Ai Se Eu Te Pego’ de Michel Teló", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "N'oubliez pas de Lisa Angell", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Pour qui ? Pourquoi ? de Zazie", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Ton activité du dimanche ?",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Rester dans les bras de mon homme", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "En gueule de bois", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Chiner dans une brocante", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>question: "Ton cocktail idéal ?",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>answers: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Une caïpirinha bien fraîche", type: "bresilien" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Le GHB spritz", type: "regine" },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ text: "Le Chanel Gate", type: "fashionista" }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const results = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"bresilien": { text: "Tu es Matthieu le Brésilien ! 🌴", img: "/mnt/data/Matthieu brésil.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"regine": { text: "Tu es Matthieu Régine Marquise des Anges ! 💃", img: "/mnt/data/Mathieu Régine.jpg" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"fashionista": { text: "Tu es Matthieu Fashionista ! 👠", img: "/mnt/data/Matthieu Fashionista.jpg" }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let scores = { "bresilien": 0, "regine": 0, "fashionista": 0 };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let quizDiv = document.getElementById("quiz");</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadQuestion(index) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (index &gt;= questions.length) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showResult();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let q = questions[index];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>quizDiv.innerHTML = `&lt;div class='question'&gt;&lt;h2&gt;${q.question}&lt;/h2&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>q.answers.forEach(answer =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>quizDiv.innerHTML += `&lt;button onclick='answerQuestion("${answer.type}", ${index})'&gt;${answer.text}&lt;/button&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>quizDiv.innerHTML += `&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function answerQuestion(type, index) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scores[type]++;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadQuestion(index + 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showResult() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let resultType = Object.keys(scores).reduce((a, b) =&gt; scores[a] &gt; scores[b] ? a : b);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let resultDiv = document.getElementById("result");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultDiv.innerHTML = `&lt;h2&gt;${results[resultType].text}&lt;/h2&gt;&lt;img src='${results[resultType].img}' /&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultDiv.style.display = "block";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>quizDiv.style.display = "none";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>loadQuestion(0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
